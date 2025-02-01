@@ -1,0 +1,72 @@
+<h1 class="text-center" style="margin-top: 10px; color: rgb(222, 218, 226); font-size: 30px;" > <b>{{title}} </b></h1>
+<div class="row">    
+    <h2 style="color: rgb(184, 175, 175);">Student List</h2> 
+</div>
+<button routerLink="/files" class="btn btn-success float-right">Upload/Download File</button>
+
+<table class = "table table-striped table-bordered" style="background-color: rgb(241, 235, 247);">
+    <thead>
+        <tr>
+            <th> First Name </th>
+            <th> Last Name </th>
+            <th> Father Name </th>
+            <th> Email Id</th>
+            <th> Actions </th>
+            <!-- <th> Files </th> -->
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let employee of employees">
+            <td> {{ employee.firstName}}</td>
+            <td> {{ employee.lastName }}</td>
+            <td> {{ employee.fathername }}</td>
+            <td> {{ employee.emailId }}</td>
+            <td>
+                <button (click) = updateEmployee(employee.id) class="btn btn-info"> Update </button>
+                <button (click) = "deleteEmployee(employee.id)" class = "btn btn-danger" style="margin-left: 10px"> Delete</button>
+                <button (click) = "employeeDetails(employee.id)" class = "btn btn-primary" style="margin-left: 10px"> View</button>
+            </td>
+            <!-- <td>
+                <button (click)=  "allFiles(employee.id)" class="btn btn-success" style="margin-left: 10px"> Files</button>
+            </td> -->
+        </tr>
+    </tbody>
+</table>
+
+<!-- <table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Content Type</th>
+            <th>Image</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let file of employees">
+            <td>
+                <h5>{{ file.filename }}</h5>
+            </td>
+            <td>
+                <h5>{{ file.contentType }}</h5>
+            </td>
+            <td>
+                <img style="width: 100px;" [src]="file.processedImg" alt="File Image" class="img-thumbnail"  />
+            </td>
+            <td>
+                <button class="btn btn-primary" (click)="downloadFile(file.id)">Download</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+ -->
+
+ 
+ <!-- <footer class="footer" style="background-position-x: fixed;">
+    <div class="container">
+        <span class="text-center"><b>M.P. STATE ELECTRONICS DEVELOPMENT CORPORATION LTD.</b></span> 
+        <span style="float: left; ; font-size: larger; color: hwb(0 4% 96%);"><b>#MPSeDC </b></span>
+        <span style="float: right;  font-size: larger; color: hwb(0 4% 96%);"><b>Mo : 7566831600 </b></span>
+    </div>
+</footer> -->
+
